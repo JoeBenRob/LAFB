@@ -1,9 +1,11 @@
 function addAccount() {
 
-    // set input boxes on html as inputs
+    // set input boxes on html to generate correct format json for account
     let accountDetails = {
+        "accountnumber": "";
         "firstName": document.getElementById("FirstNameBox").value;
         "lastName": document.getElementById("LastNameBox").value;
+        "prize": "";
     }
 
     let req = new XMLHttpRequest();
@@ -14,6 +16,6 @@ function addAccount() {
 
     }
     // need to set IP
-    req.open("POST", IP + "/Server");
+    req.open("POST", IP + "/Server/addAccount");
     req.send(JSON.stringify(accountDetails));
 }
