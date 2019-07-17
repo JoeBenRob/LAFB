@@ -1,5 +1,6 @@
 FROM python
-COPY . .
+ARG VERSION=num_gen_1
+COPY ${VERSION}.py app.py
 RUN pip install flask
 RUN pip install requests
-ENTRYPOINT ["python", "num_gen_1.py"]
+ENTRYPOINT ["python", "app.py"]
