@@ -4,7 +4,7 @@ import string
 from flask import Flask
 app = Flask(__name__)
 
-@app.route('/num_gen')
+@app.route('/text_gen')
 def two_char():
     text = "".join(random.sample(string.ascii_uppercase, 2))
     return text

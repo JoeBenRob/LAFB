@@ -3,7 +3,7 @@ import random
 from flask import Flask
 app = Flask(__name__)
 
-@app.route('/text_gen')
+@app.route('/num_gen')
 def eight_digit():
     rumber = random.randint(10000000, 99999999)
     return str(rumber)
