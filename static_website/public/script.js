@@ -2,9 +2,9 @@ function addAccount() {
 
     // set input boxes on html to generate correct format json for account
     let accountDetails = {
-        "accountnumber": ""
-        "firstName": document.getElementById("FirstNameBox").value
-        "lastName": document.getElementById("LastNameBox").value
+        "accountnumber": "",
+        "firstName": document.getElementById("FirstNameBox").value,
+        "lastName": document.getElementById("LastNameBox").value,
         "prize": ""
     }
 
