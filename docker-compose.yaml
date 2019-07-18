@@ -30,6 +30,11 @@ services:
         ports: [{target: 8087, protocol: tcp}]
         depends_on:
         - db_connector
+    notification_server:
+        image: rjharrisuk/notification_server
+        ports: [{target: 9000, protocol: tcp}]
+        depends_on:
+        - prize_gen
     static_website:
         image: 'rjharrisuk/static_website:latest'
         ports: [{target: 8089, protocol: tcp}]
