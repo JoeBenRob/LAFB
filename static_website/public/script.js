@@ -3,8 +3,8 @@ function addAccount() {
     // set input boxes on html to generate correct format json for account
     let accountDetails = {
         "accountnumber": "",
-        "firstName": document.getElementById("FirstNameBox").value,
-        "lastName": document.getElementById("LastNameBox").value,
+        "firstName": document.getElementById("firstNameBox").value,
+        "lastName": document.getElementById("lastNameBox").value,
         "prize": ""
     }
 
@@ -16,6 +16,6 @@ function addAccount() {
 
     }
     // need to set IP
-    req.open("POST", 40.68.162.72 + "/Server/addAccount");
+    req.open("POST", "/server/addAccount");
     req.send(JSON.stringify(accountDetails));
 }
