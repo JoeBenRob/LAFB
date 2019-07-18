@@ -1,0 +1,45 @@
+version: '3.3'
+services:
+    nginx:
+        image: 'nginx:latest'
+        volumes:
+            - type: bind
+              source: ./nginx.conf
+              target: /etc/nginx/nginx.conf
+        ports:
+            - {target: 80, published: 80, protocol: tcp}
+        depends_on:
+        - static_website
+    server:
+        image: 'rjharrisuk/server:latest'
+        ports: [{target: 8084, protocol: tcp}]
+        depends_on:
+        - prize_gen
+    text_gen:
+        image: joebenrob/text_gen:1
+        ports: [{target: 8085, protocol: tcp}]
+        depends_on:
+        - server
+    num_gen:
+        image: joebenrob/num_gen:1
+        ports: [{target: 8086, protocol: tcp}]
+        depends_on:
+        - server
+    prize_gen:
+        image: joebenrob/prize_gen:1
+        ports: [{target: 8087, protocol: tcp}]
+        depends_on:
+        - db_connector
+    static_website:
+        image: 'rjharrisuk/static_website:latest'
+        ports: [{target: 8089, protocol: tcp}]
+        depends_on:
+        - server
+    db_connector:
+        image: 'rjharrisuk/db_connector:latest'
+        ports: [{target: 5001, protocol: tcp}]
+        depends_on:
+        - mongo
+    mongo:
+        image: 'mongo:latest'
+        ports: [{target: 27017, protocol: tcp, published: 27017}]
