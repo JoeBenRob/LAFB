@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: text-gen
+  labels: 
+    app: text_gen
+spec:
+  selector:
+    matchLabels:
+      app: text_gen
+  template:
+    metadata:
+      labels:
+        app: text_gen
+    spec:
+      containers:
+      - name: text-gen
+        image: joebenrob/text_gen:1
+        ports:
+        - containerPort: 8085
+
