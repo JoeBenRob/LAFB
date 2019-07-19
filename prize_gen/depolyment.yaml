@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: prize-gen
-        image: joebenrob/prize_gen:1
+        image: joebenrob/prize_gen:1.1
         ports:
         - containerPort: 8087
