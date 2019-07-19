@@ -13,7 +13,7 @@ pipeline{
                 }
                 stage('---build-prizegen---'){
                         steps{
-                                sh "sudo docker-compose build prize_gen"
+                                sh "sudo docker-compose build prize_gen:1"
                         }
                 }
                 stage('---build-notification-server---'){
@@ -28,12 +28,12 @@ pipeline{
                 }
                 stage('---build-textgen---'){
                         steps{
-                                sh "sudo docker-compose build text_gen"
+                                sh "sudo docker-compose build text_gen:1"
                         }
                 }
                 stage('---build-numgen---'){
                         steps{
-                                sh "sudo docker-compose build num_gen"
+                                sh "sudo docker-compose build num_gen:1"
                         }
                 }
                 stage('---push-db-connector---'){
@@ -43,7 +43,7 @@ pipeline{
                 }
                 stage('---push-prize-gen---'){
                         steps{
-                                sh "sudo docker push joebenrob/prize_gen:latest"
+                                sh "sudo docker push joebenrob/prize_gen:1"
                         }
                 }
                 stage('---push-notification-server---'){
@@ -58,12 +58,12 @@ pipeline{
                 }
                 stage('---push-textgen---'){
                         steps{
-                                sh "sudo docker push joebenrob/text_gen:latest"
+                                sh "sudo docker push joebenrob/text_gen:1"
                         }
                 }
                 stage('---push-numgen---'){
                         steps{
-                                sh "sudo docker push joebenrob/num_gen:latest"
+                                sh "sudo docker push joebenrob/num_gen:1"
                         }
                 }
                 stage('---apply-mongo---'){
