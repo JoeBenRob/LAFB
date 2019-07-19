@@ -13,12 +13,12 @@ pipeline{
                 }
                 stage('---build-prizegen---'){
                         steps{
-                                sh "sudo docker-compose build prize-gen"
+                                sh "sudo docker-compose build prize_gen"
                         }
                 }
                 stage('---build-notification-server---'){
                         steps{
-                                sh "sudo docker-compose build notification-server"
+                                sh "sudo docker-compose build notification_server"
                         }
                 }
                 stage('---build-server---'){
@@ -28,12 +28,12 @@ pipeline{
                 }
                 stage('---build-textgen---'){
                         steps{
-                                sh "sudo docker-compose build text-gen"
+                                sh "sudo docker-compose build text_gen"
                         }
                 }
                 stage('---build-numgen---'){
                         steps{
-                                sh "sudo docker-compose build number-gen"
+                                sh "sudo docker-compose build number_gen"
                         }
                 }
                 stage('---push-db-connector---'){
@@ -115,8 +115,8 @@ pipeline{
                 }                
                 stage('---set-numgen---'){
                         steps{
-                                //sh "kubectl set image deployments/number-gen number-gen=joebenrob/number_gen:1"
-                                sh "kubectl set image deployments/number-gen number-gen=joebenrob/number_gen:2"
+                                //sh "kubectl set image deployments/num-gen num-gen=joebenrob/number_gen:1"
+                                sh "kubectl set image deployments/num-gen num-gen=joebenrob/number_gen:2"
                         }
                 }
         }
