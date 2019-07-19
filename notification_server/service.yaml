@@ -4,7 +4,7 @@ metadata:
   name: notification-server
 spec:
   selector:
-    app: notification_server
+    app: notification-server
   ports: 
   - protocol: TCP
     port: 9000

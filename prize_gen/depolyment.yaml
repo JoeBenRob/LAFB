@@ -3,15 +3,15 @@ kind: Deployment
 metadata:
   name: prize-gen
   labels: 
-    app: prize_gen
+    app: prize-gen
 spec:
   selector:
     matchLabels:
-      app: prize_gen
+      app: prize-gen
   template:
     metadata:
       labels:
-        app: prize_gen
+        app: prize-gen
     spec:
       containers:
       - name: prize-gen

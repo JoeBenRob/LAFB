@@ -3,15 +3,15 @@ kind: Deployment
 metadata:
   name: notification-server
   labels: 
-    app: notification_server
+    app: notification-server
 spec:
   selector:
     matchLabels:
-      app: notification_server
+      app: notification-server
   template:
     metadata:
       labels:
-        app: notification_server
+        app: notification-server
     spec:
       containers:
       - name: notification-server

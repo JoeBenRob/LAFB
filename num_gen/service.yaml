@@ -4,7 +4,7 @@ metadata:
   name: num-gen
 spec:
   selector:
-    app: num_gen
+    app: num-gen
   ports: 
   - protocol: TCP
     port: 8086

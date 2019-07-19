@@ -3,15 +3,15 @@ kind: Deployment
 metadata:
   name: static-website
   labels: 
-    app: static_website
+    app: static-website
 spec:
   selector:
     matchLabels:
-      app: static_website
+      app: static-website
   template:
     metadata:
       labels:
-        app: static_website
+        app: static-website
     spec:
       containers:
       - name: static-website

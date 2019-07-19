@@ -3,15 +3,15 @@ kind: Deployment
 metadata:
   name: num-gen
   labels: 
-    app: num_gen
+    app: num-gen
 spec:
   selector:
     matchLabels:
-      app: num_gen
+      app: num-gen
   template:
     metadata:
       labels:
-        app: num_gen
+        app: num-gen
     spec:
       containers:
       - name: num-gen

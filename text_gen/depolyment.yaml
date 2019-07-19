@@ -3,15 +3,15 @@ kind: Deployment
 metadata:
   name: text-gen
   labels: 
-    app: text_gen
+    app: text-gen
 spec:
   selector:
     matchLabels:
-      app: text_gen
+      app: text-gen
   template:
     metadata:
       labels:
-        app: text_gen
+        app: text-gen
     spec:
       containers:
       - name: text-gen

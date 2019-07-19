@@ -16,5 +16,9 @@ spec:
       containers:
       - name: server
         image: rjharrisuk/server:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8084
+        env:
+        - name: SERVER_PORT
+          value: "8084"

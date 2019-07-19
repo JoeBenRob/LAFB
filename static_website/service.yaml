@@ -4,7 +4,7 @@ metadata:
   name: static-website
 spec:
   selector:
-    app: static_website
+    app: static-website
   ports: 
   - protocol: TCP
     port: 8089
