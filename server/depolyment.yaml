@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: server
+  name: prime-serv
   labels: 
     app: server
 spec:
@@ -16,5 +16,6 @@ spec:
       containers:
       - name: server
         image: rjharrisuk/server:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8084
