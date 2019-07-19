@@ -103,7 +103,7 @@ pipeline{
                 }
                 stage('---set-prizegen---'){
                         steps{
-                                sh "kubectl set image deployments/prize-gen prize-generator=joebenrob/prize_gen:1"
+                                sh "kubectl set image deployments/prize-gen prize-gen=joebenrob/prize_gen:1"
                                 //sh "kubectl set image deployments/prize-gen prize-gen=joebenrob/prize_gen:2"
                         }
                 }           
