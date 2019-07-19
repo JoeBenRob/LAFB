@@ -38,22 +38,22 @@ pipeline{
                 }
                 stage('---push-db-connector---'){
                         steps{
-                                sh "sudo docker push rjharrisuk/db_connector:latest"
+                                sh "sudo docker push joebenrob/db_connector:latest"
                         }
                 }
                 stage('---push-prize-gen---'){
                         steps{
-                                sh "sudo docker push rjharrisuk/prize_generator:latest"
+                                sh "sudo docker push joebenrob/prize_generator:latest"
                         }
                 }
                 stage('---push-notification-server---'){
                         steps{
-                                sh "sudo docker push rjharrisuk/notification_server:latest"
+                                sh "sudo docker push joebenrob/notification_server:latest"
                         }
                 }
                 stage('---push-server---'){
                         steps{
-                                sh "sudo docker push rjharrisuk/server:latest"
+                                sh "sudo docker push joebenrob/server:latest"
                         }
                 }
                 stage('---push-textgen---'){
