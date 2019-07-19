@@ -15,7 +15,7 @@ function addAccount() {
         console.log(response);
 
     }
-    // need to set IP
+    // no need to set IP
     req.open("POST", "/server/addAccount");
     req.send(JSON.stringify(accountDetails));
 }
