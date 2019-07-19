@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prize-gen
+  labels: 
+    app: prize_gen
+spec:
+  selector:
+    matchLabels:
+      app: prize_gen
+  template:
+    metadata:
+      labels:
+        app: prize_gen
+    spec:
+      containers:
+      - name: prize-gen
+        image: joebenrob/prize_gen:1
+        ports:
+        - containerPort: 8087
