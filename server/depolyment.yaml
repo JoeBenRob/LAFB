@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prime-serv
+  labels: 
+    app: server
+spec:
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      labels:
+        app: server
+    spec:
+      containers:
+      - name: server
+        image: rjharrisuk/server:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8084
