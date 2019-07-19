@@ -4,7 +4,7 @@ metadata:
   name: text-gen
 spec:
   selector:
-    app: text_gen
+    app: text-gen
   ports: 
   - protocol: TCP
     port: 8085

@@ -4,7 +4,7 @@ metadata:
   name: prize-gen
 spec:
   selector:
-    app: prize_gen
+    app: prize-gen
   ports: 
   - protocol: TCP
     port: 8087
