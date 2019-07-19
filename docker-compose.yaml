@@ -11,7 +11,7 @@ services:
         depends_on:
         - static_website
     server:
-        image: 'rjharrisuk/server:latest'
+        image: 'joebenrob/server:latest'
         ports: [{target: 8084, protocol: tcp}]
         depends_on:
         - prize_gen
@@ -31,17 +31,17 @@ services:
         depends_on:
         - db_connector
     notification_server:
-        image: rjharrisuk/notification_server
+        image: joebenrob/notification_server
         ports: [{target: 9000, protocol: tcp}]
         depends_on:
         - prize_gen
     static_website:
-        image: 'rjharrisuk/static_website:latest'
+        image: 'joebenrob/static_website:latest'
         ports: [{target: 8089, protocol: tcp}]
         depends_on:
         - server
     db_connector:
-        image: 'rjharrisuk/db_connector:latest'
+        image: 'joebenrob/db_connector:latest'
         ports: [{target: 5001, protocol: tcp}]
         depends_on:
         - mongo
