@@ -43,7 +43,7 @@ pipeline{
                 }
                 stage('---push-prize-gen---'){
                         steps{
-                                sh "sudo docker push joebenrob/prize_generator:latest"
+                                sh "sudo docker push joebenrob/prize_gen:latest"
                         }
                 }
                 stage('---push-notification-server---'){
@@ -98,7 +98,7 @@ pipeline{
                 }
                 stage('---apply-numgen---'){
                         steps{
-                                sh "kubectl apply -f number_gen/deployment.yaml -f number_gen/service.yaml"
+                                sh "kubectl apply -f num_gen/deployment.yaml -f num_gen/service.yaml"
                         }
                 }
                 stage('---set-prizegen---'){
@@ -115,8 +115,8 @@ pipeline{
                 }                
                 stage('---set-numgen---'){
                         steps{
-                                //sh "kubectl set image deployments/num-gen num-gen=joebenrob/number_gen:1"
-                                sh "kubectl set image deployments/num-gen num-gen=joebenrob/number_gen:2"
+                                //sh "kubectl set image deployments/num-gen num-gen=joebenrob/num_gen:1"
+                                sh "kubectl set image deployments/num-gen num-gen=joebenrob/num_gen:2"
                         }
                 }
         }
