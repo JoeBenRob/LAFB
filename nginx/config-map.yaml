@@ -10,7 +10,7 @@ data:
                 proxy_pass http://static-website:8089/;
             }
             location /server/ {
-                proxy_pass http://prime-serv:8084/;
+                proxy_pass http://server:8084/;
             }
         location /jenkins/ {
             proxy_pass http://jenkins:8080;

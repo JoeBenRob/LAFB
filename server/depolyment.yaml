@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: prime-serv
+  name: server
   labels: 
     app: server
 spec:
@@ -19,3 +19,6 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8084
+        env:
+        - name: SERVER_PORT
+          value: "8084"

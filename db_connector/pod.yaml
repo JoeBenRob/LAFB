@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: db-connector
   labels: 
-    app: db_connector
+    app: db-connector
 spec:
   containers:
     - name: db-connector

@@ -4,7 +4,7 @@ metadata:
   name: db-connector
 spec:
   selector:
-    app: db_connector
+    app: db-connector
   ports: 
   - protocol: TCP
     port: 5001
