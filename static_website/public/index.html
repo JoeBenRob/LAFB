@@ -1,11 +1,35 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <style>                           
+                .button {
+                  padding: 15px 25px;
+                  font-size: 24px;
+                  text-align: center;
+                  cursor: pointer;
+                  outline: none;
+                  color: #fff;
+                  background-color: rgb(175, 166, 226);
+                  border: none;
+                  border-radius: 15px;
+                  box-shadow: 0 9px #999;
+                }
+                
+                .button:hover {background-color: #7273a3}
+                
+                .button:active {
+                  background-color: #a0a4dd;
+                  box-shadow: 0 5px #666;
+                  transform: translateY(4px);
+                }
+                </style>
             <!-- bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <!-- javascript source -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="script.js" type="text/javascript"></script>
  <!-- setting character set to UK -->   
     <meta charset="UTF-8">
@@ -13,13 +37,14 @@
     <title>LAFB New Account</title>
 </head>
 <body>
-    <div class="container">    
-            <h1>Landing Page</h1>
+    <div style="background-color: bisque">    
+            <h1>Little Anchorage Financial Bank</h1>
+            <h2>New Account Registration</h2>
 <input id="firstNameBox" placeholder="First Name"></input>
 <br/>
 <input id="lastNameBox" placeholder="Last Name"></input>
 <br/>
-<button id="button" onclick="addAccount()">Click to reveal Prize</button>
+<button id="button" class="button" onclick="window.location.href=window.location.href;addAccount()">Click to reveal Prize</button>
     </div>
 </body>
 </html>
