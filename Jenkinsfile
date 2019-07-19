@@ -28,12 +28,12 @@ pipeline{
                 }
                 stage('---build-textgen---'){
                         steps{
-                                sh "sudo docker-compose build text_gen:1"
+                                sh "sudo docker-compose build text_gen"
                         }
                 }
                 stage('---build-numgen---'){
                         steps{
-                                sh "sudo docker-compose build num_gen:1"
+                                sh "sudo docker-compose build num_gen"
                         }
                 }
                 stage('---push-db-connector---'){
@@ -43,7 +43,7 @@ pipeline{
                 }
                 stage('---push-prize-gen---'){
                         steps{
-                                sh "sudo docker push joebenrob/prize_gen:1"
+                                sh "sudo docker push joebenrob/prize_gen"
                         }
                 }
                 stage('---push-notification-server---'){
