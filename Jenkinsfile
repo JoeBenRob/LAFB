@@ -33,7 +33,7 @@ pipeline{
                 }
                 stage('---build-numgen---'){
                         steps{
-                                sh "sudo docker-compose build number_gen"
+                                sh "sudo docker-compose build num_gen"
                         }
                 }
                 stage('---push-db-connector---'){
