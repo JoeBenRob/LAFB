@@ -13,7 +13,7 @@ pipeline{
                 }
                 stage('---build-prizegen---'){
                         steps{
-                                sh "sudo docker-compose build prize_gen:1"
+                                sh "sudo docker-compose build prize_gen"
                         }
                 }
                 stage('---build-notification-server---'){
