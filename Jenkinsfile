@@ -8,7 +8,7 @@ pipeline{
                 }
                 stage('---build-db-connector---'){
                         steps{
-                                sh "sudo docker-compose build db-connector"
+                                sh "sudo docker-compose build db_connector"
                         }
                 }
                 stage('---build-prizegen---'){
