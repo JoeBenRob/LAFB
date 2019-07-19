@@ -37,7 +37,7 @@ services:
     prize_gen:
         image: joebenrob/prize_gen:1
         build:
-            context: ./ prize_gen
+            context: ./prize_gen
             dockerfile: Dockerfile        
         ports: [{target: 8087, protocol: tcp}]
         depends_on:
