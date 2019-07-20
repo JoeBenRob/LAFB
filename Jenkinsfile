@@ -36,6 +36,11 @@ pipeline{
                                 sh "sudo docker-compose build num_gen"
                         }
                 }
+                stage('---build-static-website---'){
+                        steps{
+                                sh "sudo docker-compose build static-website"
+                        }
+                }
                 stage('---push-db-connector---'){
                         steps{
                                 sh "sudo docker push joebenrob/db_connector:latest"
@@ -64,6 +69,11 @@ pipeline{
                 stage('---push-numgen---'){
                         steps{
                                 sh "sudo docker push joebenrob/num_gen:1"
+                        }
+                }
+                stage('---push-static-website---'){
+                        steps{
+                                sh "sudo docker push joebenrob/static_website:latest"
                         }
                 }
                 stage('---apply-mongo---'){
@@ -101,6 +111,11 @@ pipeline{
                                 sh "kubectl apply -f num_gen/deployment.yaml -f num_gen/service.yaml"
                         }
                 }
+                stage('---apply-static-website---'){
+                        steps{
+                                sh "kubectl apply -f static_website/deployment.yaml -f static_website/service.yaml"
+                        }
+                }                
                 stage('---set-prizegen---'){
                         steps{
                                 sh "kubectl set image deployments/prize-gen prize-gen=joebenrob/prize_gen:1"
