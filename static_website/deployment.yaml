@@ -16,5 +16,6 @@ spec:
       containers:
       - name: static-website
         image: joebenrob/static_website:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8089
