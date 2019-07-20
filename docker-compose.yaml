@@ -11,7 +11,7 @@ services:
         depends_on:
         - static_website
     server:
-        image: 'joebenrob/server:latest'
+        image: joebenrob/server:latest
         build:
             context: ./server
             dockerfile: Dockerfile        
