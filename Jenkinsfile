@@ -38,7 +38,7 @@ pipeline{
                 }
                 stage('---build-static-website---'){
                         steps{
-                                sh "sudo docker-compose build static-website"
+                                sh "sudo docker-compose build static_website"
                         }
                 }
                 stage('---push-db-connector---'){
