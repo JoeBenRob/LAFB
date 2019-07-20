@@ -26,7 +26,8 @@ services:
         depends_on:
         - server
     prize_gen:
-        image: joebenrob/prize_gen:1
+        image: joebenrob/prize_gen:1.1
+        build: ./prize_gen
         ports: [{target: 8087, protocol: tcp}]
         depends_on:
         - db_connector
