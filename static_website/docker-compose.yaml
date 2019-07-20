@@ -2,13 +2,13 @@ version: '3.3'
 services:
     static_website:
       container_name: static_website
-      image: rjharrisuk/static_website
+      image: joebenrob/static_website
       ports:
       - target: 8089
         published: 8089
     server:
       container_name: server
-      image: rjharrisuk/server
+      image: joebenrob/server
       ports:
       - target: 8084
         published: 8084
