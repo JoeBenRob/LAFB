@@ -51,7 +51,7 @@ services:
         depends_on:
         - prize_gen
     static_website:
-        image: 'joebenrob/static_website:latest'
+        image: joebenrob/static_website:latest
         build:
             context: ./static_website
             dockerfile: Dockerfile
@@ -59,7 +59,7 @@ services:
         depends_on:
         - server
     db_connector:
-        image: 'joebenrob/db_connector:latest'
+        image: joebenrob/db_connector:latest
         build:
             context: ./db_connector
             dockerfile: Dockerfile        
@@ -67,5 +67,5 @@ services:
         depends_on:
         - mongo
     mongo:
-        image: 'mongo:latest'
+        image: mongo:latest
         ports: [{target: 27017, protocol: tcp, published: 27017}]
