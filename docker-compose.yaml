@@ -35,15 +35,10 @@ services:
         depends_on:
         - server
     prize_gen:
-<<<<<<< HEAD
-        image: joebenrob/prize_gen:1.1
-        build: ./prize_gen
-=======
         image: joebenrob/prize_gen:1
         build:
             context: ./prize_gen
-            dockerfile: Dockerfile        
->>>>>>> 179d46d4d0e978943fa49cb2a94dde8dca8750dc
+            dockerfile: Dockerfile    
         ports: [{target: 8087, protocol: tcp}]
         depends_on:
         - db_connector
