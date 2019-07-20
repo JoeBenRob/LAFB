@@ -11,37 +11,58 @@ services:
         depends_on:
         - static_website
     server:
-        image: 'rjharrisuk/server:latest'
+        image: 'joebenrob/server:latest'
+        build:
+            context: ./server
+            dockerfile: Dockerfile        
         ports: [{target: 8084, protocol: tcp}]
         depends_on:
         - prize_gen
     text_gen:
         image: joebenrob/text_gen:1
+        build:
+            context: ./text_gen
+            dockerfile: Dockerfile
         ports: [{target: 8085, protocol: tcp}]
         depends_on:
         - server
     num_gen:
         image: joebenrob/num_gen:1
+        build:
+            context: ./num_gen
+            dockerfile: Dockerfile
         ports: [{target: 8086, protocol: tcp}]
         depends_on:
         - server
     prize_gen:
         image: joebenrob/prize_gen:1
+        build:
+            context: ./prize_gen
+            dockerfile: Dockerfile        
         ports: [{target: 8087, protocol: tcp}]
         depends_on:
         - db_connector
     notification_server:
-        image: rjharrisuk/notification_server
+        image: joebenrob/notification_server
+        build:
+            context: ./notification_server
+            dockerfile: Dockerfile        
         ports: [{target: 9000, protocol: tcp}]
         depends_on:
         - prize_gen
     static_website:
-        image: 'rjharrisuk/static_website:latest'
+        image: 'joebenrob/static_website:latest'
+        build:
+            context: ./static_website
+            dockerfile: Dockerfile
         ports: [{target: 8089, protocol: tcp}]
         depends_on:
         - server
     db_connector:
-        image: 'rjharrisuk/db_connector:latest'
+        image: 'joebenrob/db_connector:latest'
+        build:
+            context: ./db_connector
+            dockerfile: Dockerfile        
         ports: [{target: 5001, protocol: tcp}]
         depends_on:
         - mongo

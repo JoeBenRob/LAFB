@@ -1,4 +1,4 @@
-peline{
+pipeline{
         agent any
         stages{
                 stage('---build-mongo---'){
@@ -8,17 +8,17 @@ peline{
                 }
                 stage('---build-db-connector---'){
                         steps{
-                                sh "sudo docker-compose build db-connector"
+                                sh "sudo docker-compose build db_connector"
                         }
                 }
                 stage('---build-prizegen---'){
                         steps{
-                                sh "sudo docker-compose build prize-gen"
+                                sh "sudo docker-compose build prize_gen"
                         }
                 }
                 stage('---build-notification-server---'){
                         steps{
-                                sh "sudo docker-compose build notification-server"
+                                sh "sudo docker-compose build notification_server"
                         }
                 }
                 stage('---build-server---'){
@@ -28,42 +28,42 @@ peline{
                 }
                 stage('---build-textgen---'){
                         steps{
-                                sh "sudo docker-compose build text-gen"
+                                sh "sudo docker-compose build text_gen"
                         }
                 }
                 stage('---build-numgen---'){
                         steps{
-                                sh "sudo docker-compose build number-gen"
+                                sh "sudo docker-compose build num_gen"
                         }
                 }
                 stage('---push-db-connector---'){
                         steps{
-                                sh "sudo docker push rjharrisuk/db_connector:latest"
+                                sh "sudo docker push joebenrob/db_connector:latest"
                         }
                 }
                 stage('---push-prize-gen---'){
                         steps{
-                                sh "sudo docker push rjharrisuk/prize_generator:latest"
+                                sh "sudo docker push joebenrob/prize_gen"
                         }
                 }
                 stage('---push-notification-server---'){
                         steps{
-                                sh "sudo docker push rjharrisuk/notification_server:latest"
+                                sh "sudo docker push joebenrob/notification_server:latest"
                         }
                 }
                 stage('---push-server---'){
                         steps{
-                                sh "sudo docker push rjharrisuk/server:latest"
+                                sh "sudo docker push joebenrob/server:latest"
                         }
                 }
                 stage('---push-textgen---'){
                         steps{
-                                sh "sudo docker push joebenrob/text_gen:latest"
+                                sh "sudo docker push joebenrob/text_gen:1"
                         }
                 }
                 stage('---push-numgen---'){
                         steps{
-                                sh "sudo docker push joebenrob/num_gen:latest"
+                                sh "sudo docker push joebenrob/num_gen:1"
                         }
                 }
                 stage('---apply-mongo---'){
@@ -98,12 +98,12 @@ peline{
                 }
                 stage('---apply-numgen---'){
                         steps{
-                                sh "kubectl apply -f number_gen/deployment.yaml -f number_gen/service.yaml"
+                                sh "kubectl apply -f num_gen/deployment.yaml -f num_gen/service.yaml"
                         }
                 }
                 stage('---set-prizegen---'){
                         steps{
-                                sh "kubectl set image deployments/prize-gen prize-generator=joebenrob/prize_gen:1"
+                                sh "kubectl set image deployments/prize-gen prize-gen=joebenrob/prize_gen:1"
                                 //sh "kubectl set image deployments/prize-gen prize-gen=joebenrob/prize_gen:2"
                         }
                 }           
@@ -115,8 +115,8 @@ peline{
                 }                
                 stage('---set-numgen---'){
                         steps{
-                                //sh "kubectl set image deployments/number-gen number-gen=joebenrob/number_gen:1"
-                                sh "kubectl set image deployments/number-gen number-gen=joebenrob/number_gen:2"
+                                //sh "kubectl set image deployments/num-gen num-gen=joebenrob/num_gen:1"
+                                sh "kubectl set image deployments/num-gen num-gen=joebenrob/num_gen:2"
                         }
                 }
         }
