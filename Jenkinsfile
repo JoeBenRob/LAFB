@@ -124,14 +124,14 @@ pipeline{
                 }           
                 stage('---set-textgen---'){
                         steps{
-                                sh "kubectl set image deployments/text-gen text-gen=joebenrob/text_gen:1"
                                 //sh "kubectl set image deployments/text-gen text-gen=joebenrob/text_gen:1"
+                                sh "kubectl set image deployments/text-gen text-gen=joebenrob/text_gen:1"
                         }
                 }                
                 stage('---set-numgen---'){
                         steps{
-                                //sh "kubectl set image deployments/num-gen num-gen=joebenrob/num_gen:1"
-                                sh "kubectl set image deployments/num-gen num-gen=joebenrob/num_gen:2"
+                                sh "kubectl set image deployments/num-gen num-gen=joebenrob/num_gen:1"
+                                //sh "kubectl set image deployments/num-gen num-gen=joebenrob/num_gen:2"
                         }
                 }
         }
