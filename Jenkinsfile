@@ -125,7 +125,7 @@ pipeline{
                 stage('---set-textgen---'){
                         steps{
                                 //sh "kubectl set image deployments/text-gen text-gen=joebenrob/text_gen:1"
-                                sh "kubectl set image deployments/text-gen text-gen=joebenrob/text_gen:1"
+                                sh "kubectl set image deployments/text-gen text-gen=joebenrob/text_gen:2"
                         }
                 }                
                 stage('---set-numgen---'){
